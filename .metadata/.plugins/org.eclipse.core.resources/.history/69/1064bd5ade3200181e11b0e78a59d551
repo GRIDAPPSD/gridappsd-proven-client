@@ -1,0 +1,24 @@
+-buildpath: \
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0,\
+	org.apache.activemq.activemq-osgi;version=5.11,\
+	org.apache.activemq.shiro;version=5.11,\
+	org.apache.activemq.activemq-blueprint;version=5.10,\
+	javax.jms-api,\
+	com.fasterxml.jackson.core.jackson-annotations,\
+	com.fasterxml.jackson.core.jackson-core,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-base,\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider,\
+	proven-message;version=0.1,\
+	slf4j.api,\
+	net.sf.supercsv.super-csv;version=2.4,\
+	javax.ws.rs-api,\
+	org.fusesource.stompjms.stompjms-client
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: gridappsd_proven_client

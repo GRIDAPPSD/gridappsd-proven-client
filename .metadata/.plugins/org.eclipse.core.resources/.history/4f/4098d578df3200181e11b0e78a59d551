@@ -1,0 +1,6 @@
+
+/**
+ * Provides the necessary classes supporting the production of provenance in the client application. The package contains classes to parse the context file, define the provenance context and manage provenance exchange sessions.
+ * @author d3j766
+ */
+package gov.pnnl.proven.api.producer;
