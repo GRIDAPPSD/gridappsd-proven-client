@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1522360044822" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1522397473892" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="gridappsd-proven-client"/>
+      <attribute name="osgi.identity" value="proven-client"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="0.0.0.201803292041"/>
+      <attribute name="version" type="Version" value="0.0.0.201803300728"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="d0d8cffe1a5108e15a48d5eea2974a292b2c44fe66fa80467c35bc79ab3eb0ca"/>
-      <attribute name="url" value="gridappsd-proven-client/gridappsd-proven-client-0.0.0.jar"/>
-      <attribute name="size" type="Long" value="109790"/>
+      <attribute name="osgi.content" value="362cbe0e309bef2036ef0b66477e189995ff3b06afe2733de0d7cfdee2fc5a11"/>
+      <attribute name="url" value="proven-client/proven-client-0.0.0.jar"/>
+      <attribute name="size" type="Long" value="109783"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="osgi.wiring.bundle" value="gridappsd-proven-client"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201803292041"/>
+      <attribute name="osgi.wiring.bundle" value="proven-client"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201803300728"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="osgi.wiring.host" value="gridappsd-proven-client"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201803292041"/>
+      <attribute name="osgi.wiring.host" value="proven-client"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201803300728"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="gov.pnnl.proven.api.producer"/>
       <attribute name="version" type="Version" value="1.0.0"/>
-      <attribute name="bundle-symbolic-name" value="gridappsd-proven-client"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201803292041"/>
+      <attribute name="bundle-symbolic-name" value="proven-client"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201803300728"/>
       <directive name="uses" value="gov.pnnl.proven.message,gov.pnnl.proven.message.exception,javax.xml.bind.annotation"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
