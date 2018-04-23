@@ -1,0 +1,12 @@
+-dsannotations: *
+-metatypeannotations: *
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: \
+	gov.pnnl.proven.api.consts,\
+	gov.pnnl.proven.api.consts.hapi,\
+	gov.pnnl.proven.harvester
+Service-Component: *
+Export-Package: \
+	gov.pnnl.proven.api.exception,\
+	gov.pnnl.proven.api.exchange,\
+	gov.pnnl.proven.api.producer

@@ -1,0 +1,22 @@
+-buildpath: \
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0,\
+	org.apache.activemq.activemq-osgi;version=5.11,\
+	org.apache.activemq.shiro;version=5.11,\
+	org.apache.activemq.activemq-blueprint;version=5.10,\
+	com.fasterxml.jackson.core.jackson-annotations,\
+	com.fasterxml.jackson.core.jackson-core,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-base,\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider,\
+	slf4j.api,\
+	proven-message,\
+	javax.ws.rs-api
+
+javac.source: 1.8
+javac.target: 1.8
+
+
+
+-sub: *.bnd
