@@ -1,6 +1,8 @@
 /*package gov.pnnl.proven.api.exchange;
 
 import gov.pnnl.proven.message.ProvenMessage;
+import gov.pnnl.proven.message.ProvenMessageResponse;
+import gov.pnnl.proven.api.producer.ProvenResponse;
 import gov.pnnl.proven.api.producer.SessionInfo;
 
 import java.util.List;
@@ -20,10 +22,11 @@ class MqExchange implements Exchange {
 
 
 	*//**
+	 * @return 
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 *//*
 	@Override
-	public void addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) {
 		MqProducer mqProducer = new MqProducer(exchangeInfo);
 		try {
 			mqProducer.sendMessage(message, requestId);
@@ -31,6 +34,8 @@ class MqExchange implements Exchange {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
+		}
+		return null;		
 		
 	}
 	public void getProvenResults(ExchangeInfo exchangeInfo, String requestId) {

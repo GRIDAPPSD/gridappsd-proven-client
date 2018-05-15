@@ -43,7 +43,7 @@ public class ProvenProducer extends Producer{
 		messageInfo = new MessageInfo(domain, name,source, Keywords);
 	}
 
-	public void sendMessage(String message, String requestId) throws InvalidProvenMessageException, SendMessageException, NullExchangeInfoException {
+	public ProvenResponse sendMessage(String message, String requestId) throws InvalidProvenMessageException, SendMessageException, NullExchangeInfoException {
 
 		ProvenMessage pm;
 		if(messageInfo != null) {			
@@ -52,10 +52,10 @@ public class ProvenProducer extends Producer{
 		else
 			pm = ProvenMessage.message(message).build();
 		
-		System.out.println("PM Message: " + pm.getMessage() + " requestId: " + requestId);
+		//System.out.println("PM Message: " + pm.getMessage() + " requestId: " + requestId);
 		
-		log.info(pm.getMessage()+ " requestId: " + requestId);
-		sendMessage(pm, exchangeInfo, requestId);
+		//log.info(pm.getMessage()+ " requestId: " + requestId);
+		return sendMessage(pm, exchangeInfo, requestId);
 		
 		//MqConsumer consumer = new MqConsumer(exchangeInfo, requestId);
 		//return consumer.receive();
@@ -68,9 +68,15 @@ public class ProvenProducer extends Producer{
 	}
 	
 	public void sendHWMessage(String message, String requestId) throws InvalidProvenMessageException, SendMessageException, NullExchangeInfoException {
-		ProvenMessage pm = ProvenMessage.message(message).buildHW();
-		System.out.println("PM Message: " + pm.getMessage() + " requestId: " + requestId);
-		log.info(pm.getMessage()+ " requestId: " + requestId);
+		
+		ProvenMessage pm;
+		if(messageInfo != null) {			
+			pm = ProvenMessage.message(message).keywords(messageInfo.getKeywords()).domain(messageInfo.getDomain()).name(messageInfo.getName()).source(messageInfo.getSource()).buildHW();
+		}
+		else
+			pm = ProvenMessage.message(message).buildHW();
+		//System.out.println("PM Message: " + pm.getMessage() + " requestId: " + requestId);
+		//log.info(pm.getMessage()+ " requestId: " + requestId);
 		sendMessage(pm, exchangeInfo, requestId);
 	}
 

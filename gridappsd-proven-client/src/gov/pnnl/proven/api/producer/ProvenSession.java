@@ -54,7 +54,7 @@ class ProvenSession {
 		return exchanges;
 	}*/
 
-	void sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws NullExchangeInfoException {
+	ProvenResponse sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws NullExchangeInfoException {
 	
 		Exchange exchange;
 		try {
@@ -64,7 +64,7 @@ class ProvenSession {
 		throw new NullExchangeInfoException();
 		}
 
-		exchange.addProvenData(exchangeInfo, message, sessionInfo, requestId);
+		return exchange.addProvenData(exchangeInfo, message, sessionInfo, requestId);
 		
 		//use Round Robin for load balancing
 		//Round robin Implementation

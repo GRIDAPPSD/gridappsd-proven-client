@@ -2,6 +2,8 @@ package gov.pnnl.proven.api.exchange;
 
 import gov.pnnl.proven.message.ProvenMessage;
 
+import gov.pnnl.proven.message.ProvenMessageResponse;
+import gov.pnnl.proven.api.producer.ProvenResponse;
 import gov.pnnl.proven.api.producer.SessionInfo;
 
 import java.util.List;
@@ -27,7 +29,7 @@ public interface Exchange {
 	 * @param sessionInfo 
 	 * @return true if the message was successfully added, false otherwise
 	 */
-	public void addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId);
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId);
 
 	/**
 	 * Adds provided messages to the exchange.

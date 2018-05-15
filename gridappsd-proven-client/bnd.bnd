@@ -12,7 +12,8 @@
 	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider,\
 	slf4j.api,\
 	proven-message,\
-	javax.ws.rs-api
+	javax.ws.rs-api,\
+	com.google.gson
 
 javac.source: 1.8
 javac.target: 1.8

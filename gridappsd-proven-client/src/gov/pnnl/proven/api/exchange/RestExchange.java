@@ -2,6 +2,7 @@ package gov.pnnl.proven.api.exchange;
 
 import gov.pnnl.proven.message.ProvenMessage;
 import gov.pnnl.proven.message.ProvenMessageResponse;
+import gov.pnnl.proven.api.producer.ProvenResponse;
 import gov.pnnl.proven.api.producer.SessionInfo;
 import java.net.URI;
 
@@ -50,7 +51,7 @@ class RestExchange implements Exchange {
 	 */
 	@Override
 
-	public void addProvenData(ExchangeInfo exchangeInfo, final ProvenMessage message, final SessionInfo sessionInfo, String requestId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, final ProvenMessage message, final SessionInfo sessionInfo, String requestId) {
 
 				
 //		final String ADD_SERVICE_PATH = "/provenance/" + provenanceInfo.getContext();
@@ -60,8 +61,8 @@ class RestExchange implements Exchange {
 		
 		//String servicePath = "/" + provenInfo.getContext() + "/" + message.getName();
 		//servicePath = servicePath.replace(" ",  "%20");
-		
-	
+		ProvenResponse pr = new ProvenResponse();
+			
 		try {
 			//URL url = new URL("http://192.101.107.229/proven/rest/v1/repository/message/client/{domain}/{message name}");
 			//URL url = new URL(exchangeInfo.getServicesUri() + servicePath);
@@ -74,7 +75,13 @@ class RestExchange implements Exchange {
 	          accept(MediaType.APPLICATION_JSON).
 	          post(Entity.entity(message, MediaType.APPLICATION_JSON), ProvenMessageResponse.class);
 	        System.out.println(response.getCode());
-						
+	        
+	        pr.code = response.getCode();
+	        pr.status = response.getStatus();
+	        pr.result = response.getResponse();
+
+	        pr.error = response.getReason();
+	        			
 						
 			/*Client client = ClientBuilder.newClient();
 			URI uri = new URI(exchangeInfo.getServicesUri());
@@ -118,7 +125,7 @@ class RestExchange implements Exchange {
 			System.out.println(e);
 		}
 		
-		
+		return pr;
 
 		/*try {
 			

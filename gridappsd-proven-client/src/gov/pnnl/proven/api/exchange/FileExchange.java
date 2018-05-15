@@ -1,6 +1,8 @@
 package gov.pnnl.proven.api.exchange;
 
 import gov.pnnl.proven.message.ProvenMessage;
+import gov.pnnl.proven.message.ProvenMessageResponse;
+import gov.pnnl.proven.api.producer.ProvenResponse;
 import gov.pnnl.proven.api.producer.SessionInfo;
 
 import java.util.List;
@@ -19,10 +21,11 @@ class FileExchange implements Exchange {
 
 
 	/**
+	 * @return 
 	 * @see gov.pnnl.proven.api.exchange.Exchange#addProvenance()
 	 */
 	@Override
-	public void addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) {
+	public ProvenResponse addProvenData(ExchangeInfo exchangeInfo, ProvenMessage message, SessionInfo sessionInfo, String requestId) {
 		throw new UnsupportedOperationException();
 	}
 

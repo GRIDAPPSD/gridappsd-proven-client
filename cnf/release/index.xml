@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1524631903629" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1526365070817" name="Proven Client" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="gridappsd-proven-client.api"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="0.0.0.201804250451"/>
+      <attribute name="version" type="Version" value="0.0.0.201805150614"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="4b49de6c36a41d845a84602233d7b2d362085261b7096c4facae6bbc73a14595"/>
+      <attribute name="osgi.content" value="958cbdc63bf838e8a00a600ee2558925409b74b54658128e04091a4ca44ded7b"/>
       <attribute name="url" value="gridappsd-proven-client.api/gridappsd-proven-client.api-0.0.0.jar"/>
-      <attribute name="size" type="Long" value="57366"/>
+      <attribute name="size" type="Long" value="57698"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="gridappsd-proven-client.api"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201804250451"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201805150614"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="gridappsd-proven-client.api"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201804250451"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201805150614"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="gov.pnnl.proven.api.exception"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="gridappsd-proven-client.api"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201804250451"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201805150614"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="gov.pnnl.proven.api.exchange"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="gridappsd-proven-client.api"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201804250451"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201805150614"/>
       <directive name="uses" value="gov.pnnl.proven.api.producer,gov.pnnl.proven.message,javax.xml.bind.annotation"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="gov.pnnl.proven.api.producer"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="gridappsd-proven-client.api"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201804250451"/>
-      <directive name="uses" value="gov.pnnl.proven.api.exception,gov.pnnl.proven.api.exchange,gov.pnnl.proven.message,gov.pnnl.proven.message.exception,javax.xml.bind.annotation"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201805150614"/>
+      <directive name="uses" value="gov.pnnl.proven.api.exception,gov.pnnl.proven.api.exchange,gov.pnnl.proven.message,gov.pnnl.proven.message.exception,javax.ws.rs.core,javax.xml.bind.annotation"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=gov.pnnl.proven.api.exception)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
@@ -57,6 +57,9 @@
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs.client)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs.core)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(osgi.wiring.package=javax.xml.bind.annotation)"/>

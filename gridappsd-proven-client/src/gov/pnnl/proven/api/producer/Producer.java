@@ -242,7 +242,7 @@ public abstract class Producer implements ProvenStatus {
 	 * @throws NullTermValueException
 	 *             if a message term has a null value
 	 */
-	public void sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws SendMessageException, NullExchangeInfoException {
+	public ProvenResponse sendMessage(ProvenMessage message, ExchangeInfo exchangeInfo, String requestId) throws SendMessageException, NullExchangeInfoException {
 
 		/*if(registration.provenContext.getProvenInfo().isSaveMessagesInFile())
 		{
@@ -260,7 +260,8 @@ public abstract class Producer implements ProvenStatus {
 
 		}
 		else*/
-		registration.provenSession.sendMessage(message, exchangeInfo, requestId);
+		return registration.provenSession.sendMessage(message, exchangeInfo, requestId);
+		
 	}
 	
 	
